@@ -2,24 +2,42 @@
 // -----------------------------------------------------------------------------
 @import "_variables";
 @import "_vendor";
-@import "fonts/fonts";
+@import "../fonts/fonts";
 @import "_mixins";
 
+// App Components
+// ---------------------------------------
+@import "components/sprites";
+@import "components/home_header";
+@import "components/decision_selection";
 
 
-// Application styles
-//
-// -----------------------------------------------------------------------------
+
+// Global Styles
+// ---------------------------------------
 
 body {
-  background: url('fabric_plaid.png');
+  background-color: #353535;
+
+  .wwg-container {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
 }
 
-h2 {
-  border-bottom: 1px dashed #BFBFBF;
-}
+  a {
+    outline: 0;
 
-blockquote {
-  background-color: rgba(white, .4);
-  border-left: 3px solid white;
-}
+    &:hover {
+      outline: 0;
+    }
+
+    &:active {
+      outline: 0;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+

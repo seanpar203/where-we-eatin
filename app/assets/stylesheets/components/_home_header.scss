@@ -1,0 +1,64 @@
+header {
+  position: relative;
+  height: 456px;
+  margin: 0 auto;
+  background: url("home_header_bg.jpg") no-repeat center;
+  background-size: cover;
+  border-bottom: 4px solid $salmon-red;
+
+  h1, h2 {
+    position: absolute;
+    text-align: center;
+    color: #FFF;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right:0;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 8em;
+    font-family: 'WWGHeading';
+  }
+
+  h2 {
+    font-size: 1.75em;
+    margin-top: 65px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+
+// 991 px Break Point
+// ---------------------------------------
+
+@media (max-width: 991px) {
+  header {
+    height: 350px;
+
+    h1 {
+      font-size: 5.85em;
+    }
+
+    h2 {
+      margin-top: 45px;
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  header {
+    height: 250px;
+
+    h1 {
+      font-size: 3.75em;
+    }
+
+    h2 {
+      font-size: 1em;
+    }
+  }
+}
+
+

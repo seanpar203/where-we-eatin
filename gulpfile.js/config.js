@@ -1,3 +1,4 @@
+var _          = require('lodash');
 var path       = require('path');
 var modRewrite = require('connect-modrewrite')
 
@@ -5,12 +6,6 @@ var src  = './app';
 var dest = './public';
 
 module.exports = {
-
-  clean: {
-
-    src: dest
-
-  },
 
   browserify: {
 
@@ -21,6 +16,29 @@ module.exports = {
         outputName: 'app.js'
       }
     ]
+
+  },
+
+  browserSync: {
+
+    server: {
+      baseDir:    dest,
+      middleware: [
+        modRewrite([
+          '^/assets/(.+)--([\\.a-z0-9/]+)(\\.[a-z0-9]+)$ /assets/$1$3 [L]'
+        ])
+      ],
+    },
+
+    snippetOptions: {
+      blacklist: ['**/*?nosync']
+    }
+
+  },
+
+  clean: {
+
+    src: dest
 
   },
 
@@ -56,17 +74,41 @@ module.exports = {
 
   },
 
-  fonts: {
+  extras: {
 
-    src:  src + '/assets/fonts/**/*.{woff,ttf,eot}',
-    dest: dest + '/assets'
+    mapping: [
+      {
+        src:  [ src + '/\.htaccess' ],
+        dest: dest
+      },
+      {
+        src:  src + '/assets/fonts/**/*.{woff,ttf,eot}',
+        dest: dest + '/assets'
+      }
+    ]
 
   },
 
-  extras: {
+  html: {
 
-    src:  [ src + '/\.htaccess' ],
-    dest: dest
+    watch: src + '/**/*.html',
+    src:   [
+      src + '/**/*.html',
+      '!' + src + '/**/_*.html',
+      '!' + src + '/templates/**/*'
+    ],
+    dest: dest,
+
+    htmlmin: {
+      collapseWhitespace: true
+    },
+
+    production: {
+
+      src:  dest + '/*.html',
+      dest: dest,
+
+    }
 
   },
 
@@ -102,7 +144,29 @@ module.exports = {
       }
     },
 
-    uglify: {
+    test: {
+
+      karma: {
+
+        configFile: process.cwd() + '/karma.conf.js',
+        singleRun:  true
+
+      },
+
+      server: {
+        root:   process.cwd() + '/public',
+        port:   8888,
+        config: {
+          'index': [ 'index.html', 'index.htm' ]
+        }
+      },
+
+      nightwatch: {
+
+        config: process.cwd() + '/nightwatch.conf.js',
+        env:    'default'
+
+      }
 
     },
 
@@ -110,25 +174,6 @@ module.exports = {
 
       src:  dest + '/assets/*.js',
       dest: dest + '/assets',
-
-    }
-
-  },
-
-  html: {
-
-    watch: src + '/**/*.html',
-    src:   [ src + '/**/*.html', '!' + src + '/**/_*.html' ],
-    dest:  dest,
-
-    htmlmin: {
-      collapseWhitespace: true
-    },
-
-    production: {
-
-      src:  dest + '/*.html',
-      dest: dest,
 
     }
 
@@ -149,23 +194,6 @@ module.exports = {
 
         return path.basename(file.path, ext) + '--' + hash.substr(0, 5) + ext;
       }
-    }
-
-  },
-
-  browserSync: {
-
-    server: {
-      baseDir:    dest,
-      middleware: [
-        modRewrite([
-          '^/assets/(.+)--([\\.a-z0-9/]+)(\\.[a-z0-9]+)$ /assets/$1$3 [L]'
-        ])
-      ],
-    },
-
-    snippetOptions: {
-      blacklist: ['**/*?nosync']
     }
 
   }

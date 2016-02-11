@@ -1,0 +1,53 @@
+.sprite {
+  background-image: url(spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+
+  &.breakfast {
+    width: 128px;
+    height: 128px;
+    background-position: -3px -3px;
+  }
+
+  &.lunch {
+    width: 128px;
+    height: 128px;
+    background-position: -137px -3px;
+  }
+
+  &.dinner {
+    width: 128px;
+    height: 128px;
+    background-position: -271px -3px;
+  }
+
+  &.drinks {
+    width: 128px;
+    height: 128px;
+    background-position: -405px -3px;
+  }
+
+  &.pizza {
+    width: 128px;
+    height: 128px;
+    background-position: -539px -3px;
+  }
+
+  &.desert {
+    width: 128px;
+    height: 128px;
+    background-position: -673px -3px;
+  }
+
+  &.sushi {
+    width: 128px;
+    height: 128px;
+    background-position: -807px -3px;
+  }
+
+  &.ice-cream {
+    width: 128px;
+    height: 128px;
+    background-position: -941px -3px;
+  }
+}

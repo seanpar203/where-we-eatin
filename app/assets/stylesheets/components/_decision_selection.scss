@@ -1,0 +1,15 @@
+.decision-section {
+  height: 500px;
+  position: relative;
+  background-color: #FFF;
+
+  .ribbon {
+    height: 75px;
+    width: 155px;
+    margin: 0 auto;
+    text-align: center;
+    color: #FFF;
+    background: url("salmon_ribbon.png") no-repeat center;
+    background-size: contain;
+  }
+}
