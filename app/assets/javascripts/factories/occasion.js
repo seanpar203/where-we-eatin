@@ -1,4 +1,4 @@
-export default class Occasions {
+class OccasionsFactory {
   constructor() {
     this.occasions = [
       {name: 'breakfast'},
@@ -13,3 +13,5 @@ export default class Occasions {
     this.selectedOccasion = {};
   }
 }
+
+export default new OccasionsFactory();
