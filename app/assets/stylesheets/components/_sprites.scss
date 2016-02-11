@@ -1,53 +1,120 @@
 .sprite {
-  background-image: url(spritesheet.png);
+  background-image: url(spritesheet-x128.png);
   background-repeat: no-repeat;
   display: block;
+
+  &.ramen {
+    width: 128px;
+    height: 128px;
+    background-position: -2px -2px;
+  }
 
   &.breakfast {
     width: 128px;
     height: 128px;
-    background-position: -3px -3px;
-  }
-
-  &.lunch {
-    width: 128px;
-    height: 128px;
-    background-position: -137px -3px;
-  }
-
-  &.dinner {
-    width: 128px;
-    height: 128px;
-    background-position: -271px -3px;
-  }
-
-  &.drinks {
-    width: 128px;
-    height: 128px;
-    background-position: -405px -3px;
-  }
-
-  &.pizza {
-    width: 128px;
-    height: 128px;
-    background-position: -539px -3px;
+    background-position: -134px -2px;
   }
 
   &.desert {
     width: 128px;
     height: 128px;
-    background-position: -673px -3px;
+    background-position: -266px -2px;
   }
 
-  &.sushi {
+  &.dinner {
     width: 128px;
     height: 128px;
-    background-position: -807px -3px;
+    background-position: -2px -134px;
+  }
+
+  &.drinks {
+    width: 128px;
+    height: 128px;
+    background-position: -134px -134px;
   }
 
   &.ice-cream {
     width: 128px;
     height: 128px;
-    background-position: -941px -3px;
+    background-position: -266px -134px;
+  }
+
+  &.lunch {
+    width: 128px;
+    height: 128px;
+    background-position: -2px -266px;
+  }
+
+  &.pizza {
+    width: 128px;
+    height: 128px;
+    background-position: -134px -266px;
+  }
+
+  &.sushi {
+    width: 128px;
+    height: 128px;
+    background-position: -399px -3px;
+  }
+
+  @media (max-width: 481px) {
+    background-image: url(spritesheet-x64.png);
+    background-repeat: no-repeat;
+    display: block;
+
+
+    &.ramen {
+      width: 64px;
+      height: 64px;
+      background-position: -3px -3px;
+    }
+
+    &.breakfast {
+      width: 64px;
+      height: 64px;
+      background-position: -73px -3px;
+    }
+
+    &.desert {
+      width: 64px;
+      height: 64px;
+      background-position: -143px -3px;
+    }
+
+    &.dinner {
+      width: 64px;
+      height: 64px;
+      background-position: -3px -73px;
+    }
+
+    &.drinks {
+      width: 64px;
+      height: 64px;
+      background-position: -73px -73px;
+    }
+
+    &.ice-cream {
+      width: 64px;
+      height: 64px;
+      background-position: -143px -73px;
+    }
+
+    &.lunch {
+      width: 64px;
+      height: 64px;
+      background-position: -3px -143px;
+    }
+
+    &.pizza {
+      width: 64px;
+      height: 64px;
+      background-position: -73px -143px;
+    }
+
+    &.sushi {
+      width: 64px;
+      height: 64px;
+      background-position: -143px -143px;
+    }
   }
 }

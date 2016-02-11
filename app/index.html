@@ -1,7 +1,13 @@
 <!-- @include templates/_header.html -->
 
-  <section class="decision-section">
+  <section id="occasion-section">
     <div class="ribbon">Choose <br> The <br> Occasion</div>
+      <div class="container">
+        <p v-for="occasion in occasions" class="occasion">
+          <span v-bind:class="['sprite', occasion.name]" @click="selectOccasion(occasion)"></span>
+          {{ occasion.name }}
+        </p>
+      </div>
   </section>
 
 <!-- @include templates/_footer.html -->

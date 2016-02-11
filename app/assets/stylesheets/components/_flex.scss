@@ -1,0 +1,11 @@
+/*On the flex container*/
+.flex-container {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+
+  .item {
+    flex-grow: 1;
+  }
+}

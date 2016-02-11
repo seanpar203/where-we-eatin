@@ -98,7 +98,7 @@
   },
   "browserify": {
     "transform": [
-      "babelify",
+      ["babelify", { "presets": ["es2015"] }],
       "browserify-swap",
       "browserify-shim"
     ]
