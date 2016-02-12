@@ -10,12 +10,16 @@ const app = {
 
   data: {
     occasions:        Occasion.occasions,
-    selectedOccasion: Occasion.selectedOccasion
+    selectedOccasion: Occasion.selectedOccasion,
+    budgets:          Occasion.budgets,
+    selectedBudget:   Occasion.selectedBudget
   },
 
   methods: {
-    selectOccasion: Occasion.select,
-    isSelected:     Occasion.isSelected
+    selectOccasion:     Occasion.selectOccasion,
+    isSelectedOccasion: Occasion.isSelectedOccasion,
+    selectBudget:       Occasion.selectBudget,
+    isSelectedBudget:   Occasion.isSelectedBudget
   }
 };
 

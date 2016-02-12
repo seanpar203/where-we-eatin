@@ -17,3 +17,13 @@ $blockquote-font-size: $font-size-base;
 // ---------------------------------------
 $salmon-red: #f34949;
 $gray-bg: #353535;
+
+// Mixins
+// ---------------------------------------
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}

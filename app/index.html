@@ -2,9 +2,20 @@
 
   <section id="occasion-section">
     <div class="ribbon">Choose <br> The <br> Occasion</div>
+
+    {{ selectedBudget.price }}
+    {{ selectedOccasion.name }}
+
+    <div class="budget-container">
+      <p>Select Your Budget</p>
+      <div v-for="budget in budgets"  @click="selectBudget(budget)" v-bind:class="['budget-range', isSelectedBudget(budget) ? 'selected' : '']">
+        <span v-for="qty in budget.qty" class="dollar-sprites dollar"></span>
+      </div>
+    </div>
+
       <div class="container">
         <p v-for="occasion in occasions" class="occasion">
-          <span v-bind:class="['sprite', occasion.name]" @click="selectOccasion(occasion)"></span>
+          <span v-bind:class="['occasion-sprites', occasion.name]" @click="selectOccasion(occasion)"></span>
           {{ occasion.name }}
         </p>
       </div>

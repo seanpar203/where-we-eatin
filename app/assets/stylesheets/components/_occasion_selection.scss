@@ -1,6 +1,7 @@
 #occasion-section {
   height: auto;
   background-color: #FFF;
+  border-bottom: 5px solid $salmon-red;
 
   .ribbon {
     height: 75px;
@@ -13,6 +14,26 @@
     background-size: contain;
   }
 
+  .budget-container {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 35px 0;
+
+    .budget-range {
+      display: inline-block;
+      margin: 0 7px;
+      padding-top: 5px;
+      background-color: #494949;
+      @include border-radius(10px);
+      border: 3px solid #FFF;
+
+      &.selected {
+        border: 3px solid $salmon-red;
+        background-color: #494949;
+      }
+    }
+  }
+
   .occasion {
     width: 33%;
     display: inline-block;
@@ -22,7 +43,7 @@
     color: $gray-bg;
 
 
-    .sprite {
+    .occasion-sprites {
       margin: 0 auto;
     }
   }
