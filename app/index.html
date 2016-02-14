@@ -1,24 +1,11 @@
 <!-- @include templates/_header.html -->
 
   <section id="occasion-section">
-    <div class="ribbon">Choose <br> The <br> Occasion</div>
-
-    {{ selectedBudget.price }}
-    {{ selectedOccasion.name }}
-
-    <div class="budget-container">
-      <p>Select Your Budget</p>
-      <div v-for="budget in budgets"  @click="selectBudget(budget)" v-bind:class="['budget-range', isSelectedBudget(budget) ? 'selected' : '']">
-        <span v-for="qty in budget.qty" class="dollar-sprites dollar"></span>
-      </div>
+    <div class="container">
+      <div class="ribbon">Choose <br> The <br> Occasion</div>
+      <budget-brackets :selected.sync="selectedBudget"></budget-brackets>
+      <occasion-icons :selected.sync="selectedOccasion"></occasion-icons>
     </div>
-
-      <div class="container">
-        <p v-for="occasion in occasions" class="occasion">
-          <span v-bind:class="['occasion-sprites', occasion.name]" @click="selectOccasion(occasion)"></span>
-          {{ occasion.name }}
-        </p>
-      </div>
   </section>
 
 <!-- @include templates/_footer.html -->

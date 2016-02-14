@@ -1,4 +1,11 @@
-import Occasion from '../factories/occasion';
+// Services
+import Occasion from '../services/occasion';
+
+// Components
+import OccasionIcons from './../components/occasion-icons';
+import BudgetBrackets from './../components/budget-brackets';
+
+// Third Party Libraries
 import Vue from 'vue';
 import _ from 'lodash';
 
@@ -9,18 +16,10 @@ const app = {
   el: '#occasion-section',
 
   data: {
-    occasions:        Occasion.occasions,
     selectedOccasion: Occasion.selectedOccasion,
-    budgets:          Occasion.budgets,
     selectedBudget:   Occasion.selectedBudget
   },
-
-  methods: {
-    selectOccasion:     Occasion.selectOccasion,
-    isSelectedOccasion: Occasion.isSelectedOccasion,
-    selectBudget:       Occasion.selectBudget,
-    isSelectedBudget:   Occasion.isSelectedBudget
-  }
+  components: {OccasionIcons, BudgetBrackets}
 };
 
 export default new Vue(app);
