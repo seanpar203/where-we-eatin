@@ -1,0 +1,6 @@
+<div class="budget-container">
+  <p>Select Your Budget</p>
+  <div v-for="budget in budgets"  @click="selected = budget" v-bind:class="['budget-range', isSelectedBudget(budget) ? 'selected' : '']">
+    <span v-for="qty in budget.qty" class="dollar-sprites dollar"></span>
+  </div>
+</div>
