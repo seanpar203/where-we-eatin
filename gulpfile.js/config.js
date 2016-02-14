@@ -27,7 +27,7 @@ module.exports = {
         modRewrite([
           '^/assets/(.+)--([\\.a-z0-9/]+)(\\.[a-z0-9]+)$ /assets/$1$3 [L]'
         ])
-      ],
+      ]
     },
 
     snippetOptions: {
@@ -68,7 +68,7 @@ module.exports = {
     production: {
 
       src:  dest + '/assets/*.css',
-      dest: dest + '/assets',
+      dest: dest + '/assets'
 
     }
 

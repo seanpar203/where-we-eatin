@@ -19,8 +19,7 @@ var browserifyTask = function(devMode) {
 
     var b = browserify(bundleConfig)
       .transform(stringify({
-        extensions: [ '.hbs', '.tpl', '.mustache', '.html' ],
-        minify: true
+        extensions: [ '.hbs', '.tpl', '.mustache', '.html' ]
       }));
 
     var bundle = function() {
