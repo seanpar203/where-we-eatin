@@ -1,5 +1,5 @@
 // Services
-import Occasion from '../services/occasion';
+import OccasionService from '../services/occasion';
 
 // Components
 import OccasionIcons from './../components/occasion-icons';
@@ -16,8 +16,7 @@ const app = {
   el: '#occasion-section',
 
   data: {
-    selectedOccasion: Occasion.selectedOccasion,
-    selectedBudget:   Occasion.selectedBudget
+    Occasion: OccasionService
   },
   components: {OccasionIcons, BudgetBrackets}
 };
