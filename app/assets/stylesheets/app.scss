@@ -4,6 +4,7 @@
 @import "_vendor";
 @import "../fonts/fonts";
 @import "_mixins";
+@import "components/animations";
 
 // App Components
 // ---------------------------------------
@@ -18,6 +19,7 @@
 // ---------------------------------------
 
 body {
+  position: relative;
   background-color: #353535;
 
   .wwg-container {

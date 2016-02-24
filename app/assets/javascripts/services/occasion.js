@@ -20,6 +20,8 @@ class Occasion {
     ];
     this.selectedBudget = {};
     this.selectedOccasion = {};
+    this.results = [];
+    this.error = null;
   }
 
   /**

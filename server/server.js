@@ -1,10 +1,40 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+const PORT = 8080;
+const Yelp = require('./yelp');
 
-app.get('/', (req, res) => {
-    res.send('Hello World Little Nigga!');
+
+/**
+ * Middleware Config
+  */
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
-app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
+
+app.post('/search', (req, res) => {
+
+    console.log(req.body);
+
+    Yelp.search({ term: req.body.term , location: req.body.location, limit: 10, radius: 16093})
+        .then(function (data) {
+            console.log(data);
+        })
+        .catch(function (err) {
+            res.send(err);
+        });
+});
+
+app.listen(PORT, () => {
+    console.log('Example app listening on port ' + PORT);
 });
