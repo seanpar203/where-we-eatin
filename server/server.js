@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const Oauth = require('oauth');
 
 app.get('/', (req, res) => {
     res.send('Hello World Little Nigga!');
