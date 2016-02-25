@@ -1,0 +1,13 @@
+<div v-bind:class="overlayClass">
+
+    <div class="spinner-container">
+        <h4>We're fetching your request..</h4>
+        <div class="spinning-loader"></div>
+    </div>
+
+    <div class="results-container">
+        <section v-for="result in results">
+            {{ result.name }}
+        </section>
+    </div>
+</div>

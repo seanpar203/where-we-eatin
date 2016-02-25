@@ -1,0 +1,43 @@
+.overlay-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(#000, 0.7);
+
+  h4 {
+    color: #FFF;
+    position: absolute;
+    top: 350px;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    @media (max-width: 481px) {
+      top: 225px;
+    }
+  }
+
+  .spinner-container {
+    display: none;
+  }
+
+  .results-container {
+    display: none;
+  }
+
+  &.spinner {
+    .spinner-container {
+      display: block;
+    }
+  }
+
+  &.results {
+    .results-container {
+      display: block;
+    }
+  }
+}
+
+.results-container {
+  text-align: center;
+}

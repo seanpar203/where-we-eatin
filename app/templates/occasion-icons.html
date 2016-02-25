@@ -1,4 +1,6 @@
-<p v-for="occasion in occasions" class="occasion">
-    <span v-bind:class="['occasion-sprites', occasion.name]" @click="selected = occasion"></span>
-  {{ occasion.name }}
-</p>
+<div class="occasion-container">
+    <p v-for="occasion in occasions" class="occasion">
+        <span v-bind:class="['occasion-sprites', occasion.cssClass]" @click="selectOccasion(occasion)"></span>
+        {{ occasion.name }}
+    </p>
+</div>

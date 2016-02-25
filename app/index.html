@@ -1,14 +1,19 @@
 <!-- @include templates/_header.html -->
 
+<section id="occasion-section" class="clearfix">
 
-  <section id="occasion-section" class="clearfix">
-    {{ Occasion.results }}
-    <loading-spinner :requesting.sync="requesting"></loading-spinner>
-      <div class="container">
-        <div class="ribbon">Choose <br> The <br> Occasion</div>
-        <budget-brackets :selected.sync="Occasion.selectedBudget"></budget-brackets>
-        <occasion-icons :selected.sync="Occasion.selectedOccasion"></occasion-icons>
-      </div>
-  </section>
+  <loading-spinner :requesting.sync="requesting"
+                   :results.sync="Occasion.results">
+  </loading-spinner>
+
+  <div class="container">
+
+    <h4 class="ribbon"> Choose <br> The <br> Occasion </h4>
+
+    <occasion-icons :selected.sync="Occasion.selectedOccasion"
+                    :results.sync="Occasion.results">
+    </occasion-icons>
+  </div>
+</section>
 
 <!-- @include templates/_footer.html -->

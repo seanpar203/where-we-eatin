@@ -24,14 +24,12 @@ app.use(function(req, res, next) {
 
 app.post('/search', (req, res) => {
 
-    console.log(req.body);
-
-    Yelp.search({ term: req.body.term , location: req.body.location, limit: 10, radius: 16093})
+    Yelp.search({ term: req.body.term , location: req.body.location, limit: 10, radius_filter: 16093})
         .then(function (data) {
-            console.log(data);
+            res.json(data)
         })
         .catch(function (err) {
-            res.send(err);
+            res.send(err.message);
         });
 });
 

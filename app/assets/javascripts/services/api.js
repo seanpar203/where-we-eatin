@@ -1,12 +1,11 @@
-import Occasion from './occasion';
 import axios from 'axios';
 
 class ApiService {
   constructor() {
-    this.occasion = Occasion;
+    this.requesting = false;
     this.geo = {
       url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=',
-      key: '&key=AIzaSyAGxlO3d-bVPYU1o2_rDh4Wo7jFfZTHBsY',
+      key: '&key=AIzaSyAGxlO3d-bVPYU1o2_rDh4Wo7jFfZTHBsY'
     };
     this.http = axios.create();
   }
