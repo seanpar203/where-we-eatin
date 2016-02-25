@@ -52,18 +52,17 @@ class Occasion {
       .map( (place) => {
         return {
           phoneNumber: place.display_phone,
-          address:     place.location["display_address"][0] + ', ' +
-          place.location["display_address"][1],
+          address:     place.location['display_address'],
           distance:    Math.floor(place.distance * 0.000621371),
-          categories:  place["categories"],
+          categories:  _(place['categories']).map( c => c[0]).value(),
           imageUrl:    place.image_url,
           name:        place.name,
           rating:      place.rating,
           ratingImg:   place.rating_img_url,
-          review:      place.snippet_text,
           yelpUrl:     place.url
         }
       })
+      .orderBy(['rating', 'distance'], ['desc', 'asc'])
       .value();
   }
 }

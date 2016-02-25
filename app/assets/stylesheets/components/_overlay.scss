@@ -2,7 +2,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(#000, 0.7);
+  background-color: rgba(#000, 0.8);
+  overflow: auto;
 
   h4 {
     color: #FFF;
@@ -40,4 +41,33 @@
 
 .results-container {
   text-align: center;
+
+  section {
+    padding: 50px 0;
+
+    img {
+      padding-bottom: 10px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: $salmon-red;
+    }
+
+    em {
+      color: $salmon-red;
+    }
+
+    h3 {
+      margin-top: 5px;
+      font-size: 1.25em;
+      color: #FFF;
+    }
+
+    h5 {
+      color: #3bb1f9;
+    }
+  }
 }

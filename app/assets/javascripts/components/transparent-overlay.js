@@ -16,5 +16,11 @@ export default {
 
             return returnedClass
         }
+    },
+
+    filters: {
+        miles: function(distance) {
+            return distance > 0 ? distance + ' miles away from you.' : 'Less than a mile away!'
+        }
     }
 }

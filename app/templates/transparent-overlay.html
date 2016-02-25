@@ -7,7 +7,13 @@
 
     <div class="results-container">
         <section v-for="result in results">
-            {{ result.name }}
+            <img v-bind:src="result.imageUrl" alt="result.name">
+            <img v-bind:src="result.ratingImg" alt="result.rating + Star rating">
+            <h2>{{ result.name }}</h2>
+            <h5>{{ result.categories }}</h5>
+            <em>{{ result.review }}</em>
+            <h3>{{ result.address }}</h3>
+            <h5>{{ result.distance | miles }}</h5>
         </section>
     </div>
 </div>

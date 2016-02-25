@@ -17,10 +17,10 @@ const app = {
     el: '#occasion-section',
 
     data: {
-        Occasion: OccasionService,
-        requesting: $http.requesting,
+        Occasion:    OccasionService,
+        requesting:  $http.requesting,
         geolocation: window.navigator.geolocation,
-        location: null
+        location:    null
     },
 
     components: {
@@ -55,11 +55,12 @@ const app = {
             if (val) {
                 this.requesting = true;
                 $http.Search('/search', {
-                    term: this.Occasion.selectedOccasion.name,
+                    term:     this.Occasion.selectedOccasion.name,
                     location: this.location
                 })
                 .then((res) => {
-                    this.Occasion.results = this.Occasion.formatPlaces(res.data["businesses"]);
+                    console.log(res.data);
+                    this.Occasion.results = this.Occasion.formatPlaces(res.data['businesses']);
                     this.requesting = false;
                 })
                 .catch((err) => {
