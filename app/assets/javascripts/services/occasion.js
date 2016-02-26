@@ -4,44 +4,20 @@ class Occasion {
   constructor() {
     this._ = _;
     this.occasions = [
-      {name: 'Breakfast', cssClass: 'breakfast'},
-      {name: 'Lunch', cssClass: 'lunch'},
-      {name: 'Dinner', cssClass: 'dinner'},
-      {name: 'Dessert', cssClass: 'dessert'},
-      {name: 'Pizza', cssClass: 'pizza'},
-      {name: 'Ice-cream', cssClass: 'ice-cream'},
-      {name: 'Sushi', cssClass: 'sushi'},
-      {name: 'Ramen', cssClass: 'ramen'},
-      {name: 'Drinks', cssClass: 'drinks'}
+      {name: 'Breakfast', cssClass: 'breakfast', term: 'Breakfast'},
+      {name: 'Lunch', cssClass: 'lunch', term: 'Lunch'},
+      {name: 'Dinner', cssClass: 'dinner', term: 'Dinner'},
+      {name: 'Dessert', cssClass: 'dessert', term: 'Desserts'},
+      {name: 'Pizza', cssClass: 'pizza', temr: 'Pizza'},
+      {name: 'Ice-cream', cssClass: 'ice-cream', term: 'Ice Cream & Frozen Yogurt'},
+      {name: 'Sushi', cssClass: 'sushi', term: 'sushi'},
+      {name: 'Ramen', cssClass: 'ramen', term: 'ramen noodles'},
+      {name: 'Drinks', cssClass: 'drinks', term: 'bars'}
     ];
 
     this.selectedOccasion = {};
     this.results = [];
     this.error = null;
-  }
-
-  /**
-   * Occasion Comparison and Setter Functions
-   */
-
-  selectOccasion(occasion) {
-    this.selectedOccasion = occasion;
-  }
-
-  isSelectedOccasion(occasion) {
-    return this.selectedOccasion == occasion;
-  }
-
-  /**
-   * Budget Comparison and Setter Functions
-   */
-
-  selectBudget(budget) {
-    this.selectedBudget = budget;
-  }
-
-  isSelectedBudget(budget){
-    return this.selectedBudget == budget;
   }
 
   formatPlaces(placesArray) {
@@ -52,9 +28,10 @@ class Occasion {
       .map( (place) => {
         return {
           phoneNumber: place.display_phone,
-          address:     place.location['display_address'],
+          address:     place.location['display_address'].join(),
+          phone:       place.display_phone,
           distance:    Math.floor(place.distance * 0.000621371),
-          categories:  _(place['categories']).map( c => c[0]).value(),
+          categories:  _(place['categories']).map( a => a[0]).value(),
           imageUrl:    place.image_url,
           name:        place.name,
           rating:      place.rating,

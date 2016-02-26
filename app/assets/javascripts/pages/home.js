@@ -5,7 +5,7 @@ import $http from '../services/api';
 // Components
 import OccasionIcons from './../components/occasion-icons';
 import BudgetBrackets from './../components/budget-brackets';
-import LoadingSpinner from './../components/transparent-overlay';
+import OpaqueOverlay from './../components/transparent-overlay';
 
 // Third Party Libraries
 import Vue from 'vue';
@@ -26,7 +26,7 @@ const app = {
     components: {
         OccasionIcons,
         BudgetBrackets,
-        LoadingSpinner
+        OpaqueOverlay
     },
 
     attached: function() {
@@ -55,7 +55,7 @@ const app = {
             if (val) {
                 this.requesting = true;
                 $http.Search('/search', {
-                    term:     this.Occasion.selectedOccasion.name,
+                    term:     this.Occasion.selectedOccasion.term,
                     location: this.location
                 })
                 .then((res) => {

@@ -10,10 +10,22 @@
             <img v-bind:src="result.imageUrl" alt="result.name">
             <img v-bind:src="result.ratingImg" alt="result.rating + Star rating">
             <h2>{{ result.name }}</h2>
+            <h3 target="_blank"> {{ result.address }}</h3>
             <h5>{{ result.categories }}</h5>
-            <em>{{ result.review }}</em>
-            <h3>{{ result.address }}</h3>
             <h5>{{ result.distance | miles }}</h5>
+
+            <a v-bind:href="'tel:' + result.phone">
+                <i class="inquiry-sprite phone-x64"></i>
+            </a>
+
+            <a v-bind:href="'https://www.google.com/maps/dir/Current+Location/' + result.address" >
+                <i class="inquiry-sprite map-x64"></i>
+            </a>
         </section>
+    </div>
+
+    <div class="location-container">
+        <h4>Waiting on your location..</h4>
+        <div class="spinning-loader"></div>
     </div>
 </div>

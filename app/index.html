@@ -2,9 +2,10 @@
 
 <section id="occasion-section" class="clearfix">
 
-  <loading-spinner :requesting.sync="requesting"
+  <opaque-overlay :requesting.sync="requesting"
+                  :location.sync="location"
                    :results.sync="Occasion.results">
-  </loading-spinner>
+  </opaque-overlay>
 
   <div class="container">
 

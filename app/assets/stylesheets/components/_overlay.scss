@@ -26,6 +26,10 @@
     display: none;
   }
 
+  .location-container{
+    display: none;
+  }
+
   &.spinner {
     .spinner-container {
       display: block;
@@ -34,6 +38,13 @@
 
   &.results {
     .results-container {
+      display: block;
+    }
+  }
+
+  &.no-location {
+    background-color: rgba(#000, 0.6);
+    .location-container {
       display: block;
     }
   }
@@ -54,6 +65,7 @@
     h2 {
       font-size: 1.5em;
       color: $salmon-red;
+      font-weight: 500;
     }
 
     em {
@@ -61,6 +73,7 @@
     }
 
     h3 {
+      display: block;
       margin-top: 5px;
       font-size: 1.25em;
       color: #FFF;
@@ -68,6 +81,29 @@
 
     h5 {
       color: #3bb1f9;
+    }
+
+    a {
+
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .results-container {
+    section {
+
+      h2 {
+        font-size: 1.35em;
+      }
+
+      a {
+        font-size: 1em;
+      }
+
+      h5 {
+        font-size: .85em;
+      }
     }
   }
 }

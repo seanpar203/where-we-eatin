@@ -1,5 +1,5 @@
 export default {
-    props: ['requesting', 'results'],
+    props: ['requesting', 'results', 'location'],
 
     template: require('./../../../templates/transparent-overlay.html'),
 
@@ -8,11 +8,17 @@ export default {
 
             let returnedClass = 'overlay-container hidden';
 
+            // Overlay With Spinner When Sending Ajax Requests
             if(this.requesting && !this.results.length > 0)
                 returnedClass = 'overlay-container visible spinner';
 
+            // Overlay When Ajax Requests Returns With Results
             if (this.results.length > 0 && !this.requesting)
                 returnedClass = 'overlay-container visible results';
+
+            // Overlay When Waiting For Users Location
+            if(this.location == null)
+                returnedClass = 'overlay-container visible no-location';
 
             return returnedClass
         }
