@@ -19,13 +19,13 @@ header {
 
   h1 {
     font-size: 8em;
-    font-family: 'WWGHeading';
+    font-family: 'WWE-Heading';
   }
 
   h2 {
     font-size: 1.75em;
     margin-top: 65px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'WWE-Sans', sans-serif;
   }
 }
 
@@ -52,11 +52,11 @@ header {
     height: 250px;
 
     h1 {
-      font-size: 3.75em;
+      font-size: 3em;
     }
 
     h2 {
-      font-size: 1em;
+      font-size: .9em;
     }
   }
 }

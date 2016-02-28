@@ -5,20 +5,35 @@
         <div class="spinning-loader"></div>
     </div>
 
+
     <div class="results-container">
+
+        <div class="back-arrow" @click="clearResults()">
+            <em class="desktop">Back to Occasions</em>
+            <em class="mobile">Back</em>
+        </div>
+
         <section v-for="result in results">
-            <img v-bind:src="result.imageUrl" alt="result.name">
-            <img v-bind:src="result.ratingImg" alt="result.rating + Star rating">
+            <img v-bind:src="result.imageUrl" alt="{{ result.name }} + resturant image">
+            <img v-bind:src="result.ratingImg" alt="{{ result.rating }} + star rating">
             <h2>{{ result.name }}</h2>
-            <h3 target="_blank"> {{ result.address }}</h3>
+            <h3> {{ result.address }}</h3>
             <h5>{{ result.categories }}</h5>
             <h5>{{ result.distance | miles }}</h5>
 
-            <a v-bind:href="'tel:' + result.phone">
+            <!-- Mobile Clickable Phone -->
+            <a class="mobile-phone" v-bind:href="'tel:' + result.phone">
                 <i class="inquiry-sprite phone-x64"></i>
             </a>
 
-            <a v-bind:href="'https://www.google.com/maps/dir/Current+Location/' + result.address" >
+            <!-- Desktop Phone Not Clickable -->
+            <div class="desktop-phone">
+                <i class="inquiry-sprite phone-x64"></i> <br>
+                <h5>{{ result.phone }}</h5>
+            </div>
+
+            <!-- Google Maps -->
+            <a v-bind:href="'https://www.google.com/maps/dir/Current+Location/' + result.address" target="_blank">
                 <i class="inquiry-sprite map-x64"></i>
             </a>
         </section>

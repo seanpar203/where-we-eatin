@@ -22,26 +22,35 @@
 body {
   position: relative;
   background-color: #353535;
+  font-family: 'WWE-Sans', sans-serif;
 
-  .wwg-container {
+  .wwe-container {
     margin: 0 auto;
     max-width: 1200px;
   }
 }
 
-  a {
+a {
+  outline: 0;
+
+  &:hover {
     outline: 0;
-
-    &:hover {
-      outline: 0;
-    }
-
-    &:active {
-      outline: 0;
-    }
-
-    &:focus {
-      outline: 0;
-    }
   }
+
+  &:active {
+    outline: 0;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
 

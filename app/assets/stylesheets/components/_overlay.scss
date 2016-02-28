@@ -51,19 +51,44 @@
 }
 
 .results-container {
-  text-align: center;
+
+  .back-arrow {
+    position: fixed;
+    left: 10px;
+    height: 45px;
+    cursor: pointer;
+
+    em {
+      color: #FFF;
+      background: url("green-back-arrow.png") no-repeat left;
+      background-size: contain;
+
+      &.desktop {
+        padding-left: 35px;
+      }
+
+      &.mobile {
+       padding-left: 25px;
+      }
+    }
+
+  }
 
   section {
+    text-align: center;
     padding: 50px 0;
+
 
     img {
       padding-bottom: 10px;
       margin: 0 auto;
       display: block;
+      color: #FFF;
     }
 
     h2 {
       font-size: 1.5em;
+      margin-bottom: 0;
       color: $salmon-red;
       font-weight: 500;
     }
@@ -74,17 +99,31 @@
 
     h3 {
       display: block;
-      margin-top: 5px;
+      margin: 0;
       font-size: 1.25em;
       color: #FFF;
     }
 
     h5 {
+      margin-top: 5px;
+      margin-bottom: 0;
       color: #3bb1f9;
     }
 
-    a {
+    .mobile-phone {
+      display: none;
+    }
 
+    .desktop-phone {
+      display: inline-block;
+      padding-right: 25px;
+      padding-top: 25px;
+
+      h5 {
+        display: inline-block;
+        margin-top: 0;
+        color: #2ecc71;
+      }
     }
   }
 }
@@ -103,6 +142,16 @@
 
       h5 {
         font-size: .85em;
+      }
+
+      .mobile-phone {
+        padding-top: 25px;
+        padding-right: 25px;
+        display: inline-block;
+      }
+
+      .desktop-phone {
+        display: none;
       }
     }
   }

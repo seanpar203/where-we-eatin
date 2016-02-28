@@ -8,7 +8,7 @@ class Occasion {
       {name: 'Lunch', cssClass: 'lunch', term: 'Lunch'},
       {name: 'Dinner', cssClass: 'dinner', term: 'Dinner'},
       {name: 'Dessert', cssClass: 'dessert', term: 'Desserts'},
-      {name: 'Pizza', cssClass: 'pizza', temr: 'Pizza'},
+      {name: 'Pizza', cssClass: 'pizza', term: 'Pizza'},
       {name: 'Ice-cream', cssClass: 'ice-cream', term: 'Ice Cream & Frozen Yogurt'},
       {name: 'Sushi', cssClass: 'sushi', term: 'sushi'},
       {name: 'Ramen', cssClass: 'ramen', term: 'ramen noodles'},
@@ -28,10 +28,10 @@ class Occasion {
       .map( (place) => {
         return {
           phoneNumber: place.display_phone,
-          address:     place.location['display_address'].join(),
+          address:     _(place.location['display_address']).map( x => ' ' + x).value(),
           phone:       place.display_phone,
           distance:    Math.floor(place.distance * 0.000621371),
-          categories:  _(place['categories']).map( a => a[0]).value(),
+          categories:  _(place['categories']).map( a =>  ' ' +a[0] ).value(),
           imageUrl:    place.image_url,
           name:        place.name,
           rating:      place.rating,

@@ -7,8 +7,7 @@ const Yelp = require('./yelp');
 
 /**
  * Middleware Config
-  */
-
+*/
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -23,8 +22,8 @@ app.use(function(req, res, next) {
 
 
 app.post('/search', (req, res) => {
-
-    Yelp.search({ term: req.body.term , location: req.body.location, limit: 10, radius_filter: 16093})
+    console.log(req.body.term);
+    Yelp.search({ term: req.body.term , location: req.body.location, limit: 15, radius_filter: 16093})
         .then(function (data) {
             res.json(data)
         })

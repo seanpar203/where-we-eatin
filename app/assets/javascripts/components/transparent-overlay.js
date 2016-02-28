@@ -1,5 +1,5 @@
 export default {
-    props: ['requesting', 'results', 'location'],
+    props: ['requesting', 'selected', 'results', 'location'],
 
     template: require('./../../../templates/transparent-overlay.html'),
 
@@ -26,7 +26,25 @@ export default {
 
     filters: {
         miles: function(distance) {
-            return distance > 0 ? distance + ' miles away from you.' : 'Less than a mile away!'
+
+            switch (distance == distance) {
+
+                case distance > 1:
+                    return distance + ' miles away from you!';
+
+                case distance == 1:
+                    return distance + ' mile away from you!';
+
+                case distance == 0:
+                    return 'Less than a mile away!';
+            }
+        }
+    },
+
+    methods: {
+        clearResults: function() {
+            this.selected = {};
+            this.results = [];
         }
     }
 }

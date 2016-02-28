@@ -1,20 +1,19 @@
 <!-- @include templates/_header.html -->
 
-<section id="occasion-section" class="clearfix">
+<section id="occasion-section">
 
   <opaque-overlay :requesting.sync="requesting"
                   :location.sync="location"
-                   :results.sync="Occasion.results">
+                  :selected.sync="Occasion.selectedOccasion"
+                  :results.sync="Occasion.results">
   </opaque-overlay>
 
-  <div class="container">
+  <h4 class="ribbon"> Choose <br> The <br> Occasion </h4>
 
-    <h4 class="ribbon"> Choose <br> The <br> Occasion </h4>
+  <occasion-icons :selected.sync="Occasion.selectedOccasion"
+                  :results.sync="Occasion.results">
+  </occasion-icons>
 
-    <occasion-icons :selected.sync="Occasion.selectedOccasion"
-                    :results.sync="Occasion.results">
-    </occasion-icons>
-  </div>
 </section>
 
 <!-- @include templates/_footer.html -->
