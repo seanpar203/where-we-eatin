@@ -10,7 +10,7 @@ class ApiService {
     this.http = axios.create();
   }
   Search(url, data) {
-    return this.http.post(url, data, {baseURL: 'http://www.where-we-eating.com:8080/'})
+    return this.http.post(url, data, {baseURL: 'http://www.where-we-eating.com/'})
   }
   getLocation(lat, lon) {
     return this.http.get(this.geo.url + lat + ',' + lon + this.geo.key)
