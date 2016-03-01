@@ -8,10 +8,10 @@
 
     <link rel="stylesheet" href="assets/app.css">
   </head>
-  <body>
+  <body id="occasion-app">
 
   <div class="wwe-container">
-    <header>
-      <h1>Where We Eatin?</h1>
-      <h2>~ Shouldn't be such a difficult question ~</h2>
-    </header>
+
+    <header-component :selected.sync="Occasion.selectedOccasion"
+                      :results.sync="Occasion.results">
+    </header-component>

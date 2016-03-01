@@ -52,31 +52,9 @@
 
 .results-container {
 
-  .back-arrow {
-    position: fixed;
-    left: 10px;
-    height: 45px;
-    cursor: pointer;
-
-    em {
-      color: #FFF;
-      background: url("green-back-arrow.png") no-repeat left;
-      background-size: contain;
-
-      &.desktop {
-        padding-left: 35px;
-      }
-
-      &.mobile {
-       padding-left: 25px;
-      }
-    }
-
-  }
-
   section {
     text-align: center;
-    padding: 50px 0;
+    padding: 35px 0;
 
 
     img {
@@ -130,6 +108,7 @@
 
 @media (max-width: 481px) {
   .results-container {
+
     section {
 
       h2 {

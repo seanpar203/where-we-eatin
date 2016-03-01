@@ -6,6 +6,7 @@ import $http from '../services/api';
 import OccasionIcons from './../components/occasion-icons';
 import BudgetBrackets from './../components/budget-brackets';
 import OpaqueOverlay from './../components/transparent-overlay';
+import HeaderComponent from './../components/header-component';
 
 // Third Party Libraries
 import Vue from 'vue';
@@ -14,7 +15,7 @@ import Vue from 'vue';
 Vue.config.debug = true;
 
 const app = {
-    el: '#occasion-section',
+    el: '#occasion-app',
 
     data: {
         Occasion:    OccasionService,
@@ -26,7 +27,8 @@ const app = {
     components: {
         OccasionIcons,
         BudgetBrackets,
-        OpaqueOverlay
+        OpaqueOverlay,
+        HeaderComponent
     },
 
     attached: function() {
@@ -37,7 +39,7 @@ const app = {
                         this.location = res.data.results[0].formatted_address;
                     })
                     .catch((err) => {
-                        console.log(err.message);
+                        alert('Sorry, There was an error. Try refreshing page!')
                     });
             });
         }
@@ -48,6 +50,9 @@ const app = {
             return this.Occasion.selectedOccasion.name &&
                    this.location &&
                    this.Occasion.results.length == 0;
+        },
+        resultsClass: function() {
+            return this.Occasion.results.length > 0 ? 'active-results' : 'no-results';
         }
     },
     watch: {
@@ -59,7 +64,6 @@ const app = {
                     location: this.location
                 })
                 .then((res) => {
-                    console.log(res.data);
                     this.Occasion.results = this.Occasion.formatPlaces(res.data['businesses']);
                     this.requesting = false;
                 })

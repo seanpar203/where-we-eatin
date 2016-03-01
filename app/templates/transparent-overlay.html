@@ -8,11 +8,6 @@
 
     <div class="results-container">
 
-        <div class="back-arrow" @click="clearResults()">
-            <em class="desktop">Back to Occasions</em>
-            <em class="mobile">Back</em>
-        </div>
-
         <section v-for="result in results">
             <img v-bind:src="result.imageUrl" alt="{{ result.name }} + resturant image">
             <img v-bind:src="result.ratingImg" alt="{{ result.rating }} + star rating">

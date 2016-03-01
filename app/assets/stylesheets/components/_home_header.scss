@@ -1,10 +1,47 @@
 header {
-  position: relative;
   height: 456px;
   margin: 0 auto;
   background: url("home_header_bg.jpg") no-repeat center;
   background-size: cover;
   border-bottom: 4px solid $salmon-red;
+
+  .back-arrow {
+    cursor: pointer;
+  }
+
+  &.no-results {
+    position: relative;
+
+    em {
+      display: none;
+    }
+  }
+
+  &.active-results {
+    position: fixed;
+    top: 0;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 1;
+
+    em {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: #FFF;
+      background: url("green-back-arrow.png") no-repeat left;
+      background-size: contain;
+
+      &.desktop {
+        padding-left: 35px;
+      }
+
+      &.mobile {
+        display: none;
+      }
+    }
+  }
 
   h1, h2 {
     position: absolute;
@@ -37,12 +74,12 @@ header {
     height: 350px;
 
     h1 {
-      font-size: 5.85em;
+      font-size: 4.25em;
     }
 
     h2 {
       margin-top: 45px;
-      font-size: 1.5em;
+      font-size: 1.25em;
     }
   }
 }

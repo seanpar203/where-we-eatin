@@ -4,12 +4,12 @@ export default {
     template: require('./../../../templates/transparent-overlay.html'),
 
     computed: {
-        overlayClass: function() {
+        overlayClass: function () {
 
             let returnedClass = 'overlay-container hidden';
 
             // Overlay With Spinner When Sending Ajax Requests
-            if(this.requesting && !this.results.length > 0)
+            if (this.requesting && !this.results.length > 0)
                 returnedClass = 'overlay-container visible spinner';
 
             // Overlay When Ajax Requests Returns With Results
@@ -17,7 +17,7 @@ export default {
                 returnedClass = 'overlay-container visible results';
 
             // Overlay When Waiting For Users Location
-            if(this.location == null)
+            if (this.location == null)
                 returnedClass = 'overlay-container visible no-location';
 
             return returnedClass
@@ -25,7 +25,7 @@ export default {
     },
 
     filters: {
-        miles: function(distance) {
+        miles: function (distance) {
 
             switch (distance == distance) {
 
@@ -38,13 +38,6 @@ export default {
                 case distance == 0:
                     return 'Less than a mile away!';
             }
-        }
-    },
-
-    methods: {
-        clearResults: function() {
-            this.selected = {};
-            this.results = [];
         }
     }
 }

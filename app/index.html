@@ -1,6 +1,6 @@
 <!-- @include templates/_header.html -->
 
-<section id="occasion-section">
+<section v-bind:class="['occasion-section', resultsClass]">
 
   <opaque-overlay :requesting.sync="requesting"
                   :location.sync="location"
