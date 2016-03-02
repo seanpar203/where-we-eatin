@@ -1,25 +1,35 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
-const PORT = 80;
+
+const bodyParser = require('body-parser');
+const compress = require('compression');
 const Yelp = require('./yelp');
+
+const PORT = 80;
 const oneYear = 31557600000;
 
-/**
- * Middleware Config
-*/
+// Express Middleware
+// ----------------------------
+
+// Gzip Compression
+app.use(compress());
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+// Leverage Browser Cachcing
 app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
+
+// Cors
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.vary('Accept-Encoding');
     next();
 });
+
 
 app.get('*', function(req,res) {
     res.sendFile(__dirname + '/public/index.html');
