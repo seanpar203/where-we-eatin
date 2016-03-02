@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 80;
 const Yelp = require('./yelp');
+const oneYear = 31557600000;
 
 /**
  * Middleware Config
@@ -13,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/public/'));
+app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
