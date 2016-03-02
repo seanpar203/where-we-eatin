@@ -25,7 +25,8 @@ app.use(express.static(__dirname + '/public', { maxAge: oneMonth }));
 
 // Cors
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "where-we-eatin.com");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
