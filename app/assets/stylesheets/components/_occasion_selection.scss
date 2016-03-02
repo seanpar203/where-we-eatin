@@ -5,7 +5,7 @@
   border-bottom: 5px solid $salmon-red;
 
   &.active-results {
-    margin-top: 463px;
+    margin-top: 256px;
   }
 
   .ribbon {
@@ -60,17 +60,10 @@
     }
   }
 
-  @media (max-width: 991px) {
-
-    &.active-results {
-      margin-top: 357px;
-    }
-  }
-
   @media (max-width: 481px) {
 
     &.active-results {
-      margin-top: 258px;
+      margin-top: 154px;
     }
 
     .ribbon, .occasion {

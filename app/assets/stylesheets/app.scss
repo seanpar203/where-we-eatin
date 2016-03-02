@@ -1,10 +1,10 @@
 // Local & 3rd Party Includes
 // -----------------------------------------------------------------------------
-@import "_variables";
-@import "_vendor";
-@import "../fonts/fonts";
-@import "_mixins";
+@import "foundation/_variables";
+@import "foundation/_mixins";
 @import "components/animations";
+@import "../fonts/fonts";
+
 
 // App Components
 // ---------------------------------------
@@ -23,6 +23,7 @@ body {
   position: relative;
   background-color: #353535;
   font-family: 'WWE-Sans', sans-serif;
+  margin: 0;
 
   .wwe-container {
     margin: 0 auto;

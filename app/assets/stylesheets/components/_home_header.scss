@@ -1,9 +1,10 @@
 header {
-  height: 456px;
+  height: 250px;
   margin: 0 auto;
   background: url("home_header_bg.jpg") no-repeat center;
   background-size: cover;
   border-bottom: 4px solid $salmon-red;
+  @include vert-parent();
 
   .back-arrow {
     cursor: pointer;
@@ -44,14 +45,10 @@ header {
   }
 
   h1, h2 {
-    position: absolute;
     text-align: center;
     color: #FFF;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    right:0;
-    margin: 0 auto;
+    @include horz-align(absolute);
+    @include vert-align(absolute);
   }
 
   h1 {
@@ -71,7 +68,6 @@ header {
 
 @media (max-width: 991px) {
   header {
-    height: 350px;
 
     h1 {
       font-size: 4.25em;
@@ -84,16 +80,34 @@ header {
   }
 }
 
+// Newer Gen Smart Phones Media Queries
+//-----------------------------------------
+
 @media (max-width: 481px) {
   header {
-    height: 250px;
+    height: 150px;
 
     h1 {
       font-size: 3em;
     }
 
     h2 {
+      margin-top: 20px;
       font-size: .9em;
+    }
+    h1, h2 {
+      transform: translateY(-65%);
+    }
+  }
+}
+
+// Older Gen Smart Phones Media Queries
+//-----------------------------------------
+
+@media (max-width: 320px) {
+  header {
+    h1, h2 {
+      transform: translateY(-80%);
     }
   }
 }
