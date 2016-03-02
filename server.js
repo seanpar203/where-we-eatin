@@ -6,7 +6,7 @@ const compress = require('compression');
 const Yelp = require('./yelp');
 
 const PORT = 80;
-const oneYear = 31557600000;
+const oneYear = 2629746000;
 
 // Express Middleware
 // ----------------------------
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Leverage Browser Cachcing
-app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
+app.use(express.static(__dirname + '/public', { maxAge: oneMonth }));
 
 // Cors
 app.use(function(req, res, next) {
