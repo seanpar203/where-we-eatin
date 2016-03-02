@@ -6,7 +6,7 @@ const compress = require('compression');
 const Yelp = require('./yelp');
 
 const PORT = 80;
-const oneYear = 2629746000;
+const oneMonth = 2629746000;
 
 // Express Middleware
 // ----------------------------
