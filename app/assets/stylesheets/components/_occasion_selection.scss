@@ -1,11 +1,13 @@
 .occasion-section {
   position: relative;
   height: auto;
+  padding-bottom: 65px;
   background-color: #FFF;
   border-bottom: 5px solid $salmon-red;
 
   &.active-results {
-    margin-top: 256px;
+    position: relative;
+    top: 0;
   }
 
   .ribbon {
@@ -61,10 +63,6 @@
   }
 
   @media (max-width: 481px) {
-
-    &.active-results {
-      margin-top: 154px;
-    }
 
     .ribbon, .occasion {
       font-size: 1em;
