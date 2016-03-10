@@ -87,6 +87,7 @@
     "babel-polyfill": "6.5.0",
     "body-parser": "^1.15.0",
     "bootstrap-sass": "3.3.6",
+    "compression": "^1.6.1",
     "express": "^4.13.4",
     "fastclick": "1.0.6",
     "lodash": "4.3.0",
