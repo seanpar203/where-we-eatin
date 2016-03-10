@@ -11,7 +11,7 @@ class Occasion {
       {name: 'Pizza', cssClass: 'pizza', term: 'Pizza'},
       {name: 'Ice-cream', cssClass: 'ice-cream', term: 'Ice Cream & Frozen Yogurt'},
       {name: 'Sushi', cssClass: 'sushi', term: 'sushi'},
-      {name: 'Ramen', cssClass: 'ramen', term: 'ramen noodles'},
+      {name: 'Ramen', cssClass: 'ramen', term: 'ramen'},
       {name: 'Drinks', cssClass: 'drinks', term: 'bars'}
     ];
 
