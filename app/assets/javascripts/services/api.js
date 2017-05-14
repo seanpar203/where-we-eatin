@@ -13,7 +13,7 @@ class ApiService {
 	}
 
 	Search(url, data) {
-		return this.http.post(url, data, { baseURL: 'http://127.0.0.1:8000/' })
+		return this.http.post(url, data, { baseURL: 'https://where-we-eatin.herokuapp.com/'app })
 	}
 
 	getLocation(lat, lon) {
