@@ -13,7 +13,7 @@ class ApiService {
 	}
 
 	Search(url, data) {
-		return this.http.post(url, data, { baseURL: 'https://where-we-eatin.herokuapp.com/'app })
+		return this.http.post(url, data, { baseURL: 'https://where-we-eatin.herokuapp.com/' })
 	}
 
 	getLocation(lat, lon) {
